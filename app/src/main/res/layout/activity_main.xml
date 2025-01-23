@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:paddingVertical="?android:attr/actionBarSize"
+    android:paddingHorizontal="16dp">
+
+    <EditText
+        android:id="@+id/etMaxPrice"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/btnApply"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnApply"
+        android:inputType="numberDecimal"
+        android:hint="Enter maximum price"/>
+
+    <ImageView
+        android:id="@+id/btnClear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/btnApply"
+        app:layout_constraintBottom_toBottomOf="@id/btnApply"
+        app:layout_constraintEnd_toEndOf="@id/etMaxPrice"
+        android:layout_marginEnd="10dp"
+        android:src="@drawable/baseline_clear_24"/>
+
+    <Button
+        android:id="@+id/btnApply"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="?android:attr/actionBarSize"
+        android:text="Apply"/>
+
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_height="0dp"
+        android:layout_width="0dp"
+        app:layout_constraintBottom_toTopOf="@id/imgPropertyImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnApply"
+        android:layout_marginVertical="10dp"/>
+
+    
+    <ImageView
+        android:id="@+id/imgPropertyImage"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_percent="0.3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvPrice"
+        android:contentDescription="Property Image"
+        android:src="@drawable/baseline_insert_photo_24"/>
+    
+    <TextView
+        android:id="@+id/tvPrice"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/imgPropertyImage"
+        app:layout_constraintBottom_toTopOf="@id/tvAddress"
+        android:layout_marginBottom="5dp"
+        android:layout_marginStart="10dp"
+        android:text=""/>
+
+    <TextView
+        android:id="@+id/tvAddress"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/tvPrice"
+        app:layout_constraintBottom_toTopOf="@id/tvBedrooms"
+        android:layout_marginBottom="5dp"
+        android:text="Choose a marker\n" />
+
+    <TextView
+        android:id="@+id/tvBedrooms"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/tvPrice"
+        app:layout_constraintBottom_toTopOf="@id/btnAddToWatchlist"
+        android:layout_marginBottom="5dp"
+        android:text="" />
+    
+    <Button
+        android:id="@+id/btnAddToWatchlist"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintWidth_percent="0.5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/tvPrice"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Add to Watchlist"
+        android:enabled="false"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
