@@ -1,3 +1,3 @@
-An Android app with Google Maps, Recycler View, Firebase Auth, Firebase Firestore.
+An Android app with Google Maps API, Recycler View, Firebase Auth, and Firebase Firestore.
 
-Users can view available rental housings listed on the Google Map and log in to access the watchlist feature. 
+Users can view available rental housing listed on Google Maps and log in to access the watchlist feature. 
